@@ -144,7 +144,10 @@ information about `paper-radio-button`.
         }
 
         if (oldItem)
+        {
           oldItem.checked = false;
+          oldItem.dispatchEvent(new CustomEvent("change"))
+        }
       }
 
       Polymer.IronSelectableBehavior.select.apply(this, [value]);
